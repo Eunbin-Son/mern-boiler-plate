@@ -87,7 +87,7 @@ userSchema.methods.generateJWT = function(cb) {
     
 }
 
-userSchema.statics.findbytoken = function(token, cb) {
+userSchema.statics.findByToken = function(token, cb) {
     var user = this;
 
     jwt.verify(token, 'PrivateKey', function(err, decodeToken){

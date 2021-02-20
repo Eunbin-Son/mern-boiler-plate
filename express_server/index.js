@@ -58,7 +58,6 @@ app.post("/login", (req, res) => {
                         res.cookie("jwt", user.token).status(200).json({
                             loginSucces: true, 
                             userID: user._id
-
                         });
                     })
             })
@@ -77,6 +76,17 @@ app.get("/auth", auth, (req, res) => {
         role: req.user.role,
         image: req.user.image
     })
+})
+
+app.get("/logout", auth, (req, res) => {
+
+    User.findOneAndUpdate({_id: req.user._id}, {token: ""},  (err, user) => {
+        if(err) return res.json({ success: false, err})
+        return res.status(200).send({
+            success: true
+        })
+    })
+
 })
 
 //리슨

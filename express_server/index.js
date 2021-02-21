@@ -85,8 +85,9 @@ app.get("/logout", auth, (req, res) => {
         return res.status(200).send({
             success: true
         })
-    })
 
+        
+    })
 })
 
 //리슨

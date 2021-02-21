@@ -29,7 +29,7 @@ const connect = mongoose.connect(config.mongoURI,
 //요청 라우팅
 app.get("/", (req, res) => res.send('This is the landing page.'));
 
-app.post("/register", (req, res) => {
+app.post("/api/users/register", (req, res) => {
     const user = new User(req.body);
     user.save((err, userinfo) => {
         if(err) return res.send('register failed'+err)
@@ -37,7 +37,7 @@ app.post("/register", (req, res) => {
     })
 })
 
-app.post("/login", (req, res) => {
+app.post("/api/users/login", (req, res) => {
     User.findOne({ user_email: req.body.user_email}, (err, user) => {
         if(!user)
             return res.json({
@@ -54,9 +54,9 @@ app.post("/login", (req, res) => {
 
                     user.generateJWT((err, user) => {
                         if(err) return res.status(400).send(err);
-                        
+
                         res.cookie("jwt", user.token).status(200).json({
-                            loginSucces: true, 
+                            loginSuccess: true, 
                             userID: user._id
                         });
                     })

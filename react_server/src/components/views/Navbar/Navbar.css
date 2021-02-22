@@ -1,0 +1,27 @@
+@import '~antd/dist/antd.css';
+
+.menu {
+  padding: 0 20px;
+  border-bottom: solid 1px #e8e8e8;
+  overflow: auto;
+  box-shadow: 0 0 30px #f3f1f1;
+  background-color: white;
+}
+
+.menu__home {
+  width: 150px;
+  float: left;
+}
+
+.menu__home a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 19px 20px;
+}
+
+.menu__container .menu_right {
+  float: right;
+  display: inline-block;
+  font-size: 20px;
+  padding: 19px 20px;
+}

@@ -1,11 +1,10 @@
 import React from 'react';
 import Axios from 'axios';
-//import { useSelector } from "react-redux"
 import { withRouter } from "react-router-dom";
+import { Button } from 'antd';
 
 function LandingPage(props) {
 
-    //let user = useSelector(state => state.user);
     const logoutHandler = () => {
         Axios.get('/api/users/logout')
             .then(response => {
@@ -15,14 +14,14 @@ function LandingPage(props) {
                     alert('로그아웃을 실패하였습니다. 혹은 이미 로그아웃한 상태입니다.')
                 }
             })
-
     }
 
     return (
-        <div>
-            <h2>Landing Page</h2>
-            <button onClick={logoutHandler}>로그아웃</button>
-        </div>
+            <div style={{position: 'absolute', bottom: '50%',  top: '50%', left:'50%',  right: '50%'}}>
+                <br />
+                <h2>Landing Page</h2>
+                <Button onClick={logoutHandler} href="#">로그아웃</Button>
+            </div>
     )
 }
 

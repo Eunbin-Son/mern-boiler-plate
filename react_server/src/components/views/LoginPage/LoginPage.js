@@ -2,11 +2,11 @@ import React  from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
 
-import { withRouter } from "react-router-dom";
-
+import { withRouter, Link } from "react-router-dom";
 import { loginUser } from "../../../REDUX_actions/user_actions";
 
 import "./styles.css";
+import { Checkbox } from 'antd';
 
 function LoginPage(props) {
 
@@ -52,10 +52,11 @@ function LoginPage(props) {
             />
             {errors.password && errors.password.type === "required" &&<p>This password field is required</p>}
             {errors.password && errors.password.type === "minLength" &&<p>password would be more then 12 characters</p>}
-            
+            <Checkbox>Remember me</Checkbox><Link to ="/register" className="login-form-register">Register now</Link>
             <input type="submit" />
             
         </form>
+
     )
 }
 

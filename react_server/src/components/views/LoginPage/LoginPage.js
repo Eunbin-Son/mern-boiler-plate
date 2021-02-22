@@ -2,6 +2,8 @@ import React  from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
 
+import { withRouter } from "react-router-dom";
+
 import { loginUser } from "../../../REDUX_actions/user_actions";
 
 import "./styles.css";
@@ -52,8 +54,9 @@ function LoginPage(props) {
             {errors.password && errors.password.type === "minLength" &&<p>password would be more then 12 characters</p>}
             
             <input type="submit" />
+            
         </form>
     )
 }
 
-export default LoginPage
+export default withRouter(LoginPage);

@@ -2,6 +2,7 @@ import React, { useRef, useState }  from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
 import { registerUser } from "../../../REDUX_actions/user_actions";
+import { withRouter } from "react-router-dom";
 
 import "./styles.css";
 
@@ -85,4 +86,4 @@ function RegisterPage(props) {
     )
 }
 
-export default RegisterPage
+export default withRouter(RegisterPage)

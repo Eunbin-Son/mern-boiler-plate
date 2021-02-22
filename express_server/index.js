@@ -65,12 +65,12 @@ app.post("/api/users/login", (req, res) => {
 })
 
 
-app.get("/auth", auth, (req, res) => {
+app.get("/api/users/auth", auth, (req, res) => {
 
     res.status(200).json({
         _id: req.user._id,
         idAdmin: req.user.role === "user" ? false : true,
-        isAuth: true,
+        isAuth: true, //
         user_email: req.user.user_email,
         user_name: req.user.user_name,
         role: req.user.role,
@@ -78,15 +78,13 @@ app.get("/auth", auth, (req, res) => {
     })
 })
 
-app.get("/logout", auth, (req, res) => {
+app.get("/api/users/logout", auth, (req, res) => {
 
     User.findOneAndUpdate({_id: req.user._id}, {token: ""},  (err, user) => {
-        if(err) return res.json({ success: false, err})
+        if(err) return res.json({ logoutSuccess: false, err})
         return res.status(200).send({
-            success: true
+            logoutSuccess: true
         })
-
-        
     })
 })
 

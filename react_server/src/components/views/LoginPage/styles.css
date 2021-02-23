@@ -38,7 +38,7 @@ input {
   box-sizing: border-box;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid green;
+  border: 1px solid #00010246;
   padding: 10px 15px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -50,14 +50,14 @@ label {
   display: block;
   margin-bottom: 13px;
   margin-top: 20px;
-  color: green;
+  color: #000102d2;
   font-size: 14px;
   font-weight: 200;
 }
 
 button[type='submit'],
 input[type='submit'] {
-  background: #ec5990;
+  background: #000102cc;
   color: white;
   text-transform: uppercase;
   border: none;
@@ -70,7 +70,7 @@ input[type='submit'] {
 
 button[type='submit']:hover,
 input[type='submit']:hover {
-  background: #bf1650;
+  background: #000000bc;
 }
 
 button[type='submit']:active,

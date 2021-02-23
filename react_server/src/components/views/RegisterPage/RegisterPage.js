@@ -5,6 +5,8 @@ import { registerUser } from "../../../REDUX_actions/user_actions";
 import { withRouter } from "react-router-dom";
 
 import "./styles.css";
+import Checkbox from 'antd/lib/checkbox/Checkbox';
+import { Space } from 'antd';
 
 function RegisterPage(props) {
 
@@ -80,8 +82,14 @@ function RegisterPage(props) {
             {errors.password_confirm && errors.password_confirm.type === "required" &&<p>This password confirm field is required</p>}
             {errors.password_confirm && errors.password_confirm.type === "minLength" &&<p>password would be more then 12 characters</p>}
             {errors.password_confirm && errors.password_confirm.type === "validate" &&<p>The password do not match</p>}
-
-            <input type="submit" />
+            <div>
+            
+              <Checkbox>I agree to Servey Program’s Terms of Service</Checkbox><a style={{float:"right"}}href="#">❔Terms of Service</a>
+            
+              <Checkbox>I accept Servey Program’s use of my data for the service</Checkbox><a style={{float:"right"}} href="#">❔Privacy Policy</a>
+            
+            </div>
+            <input type="submit" value="Register"/>
         </form>
     )
 }

@@ -21,8 +21,7 @@ function Navbar() {
                 </div>
                 <div className="menu_right">
                         <Button href="/login">log in</Button>
-                </div>
-                
+                </div>                
             </div>
         </nav>
     )

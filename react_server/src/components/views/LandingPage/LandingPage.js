@@ -1,9 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
 import { withRouter } from "react-router-dom";
-import { Button } from 'antd';
+import { Button, Space, Typography } from 'antd';
+import  {CodeOutlined} from '@ant-design/icons';
 
 function LandingPage(props) {
+
+    const {Text} = Typography;
 
     const logoutHandler = () => {
         Axios.get('/api/users/logout')
@@ -17,11 +20,16 @@ function LandingPage(props) {
     }
 
     return (
-            <div style={{position: 'absolute', bottom: '50%',  top: '50%', left:'50%',  right: '50%'}}>
+        <div>
+            <div className="app">
+                <Space direction="vertical" align="center">
+                <CodeOutlined style={{fontSize:'5rem'}}/>
+                <Text code style={{fontSize:'2rem'}}>Please Add Files</Text>
                 <br />
-                <h2>Landing Page</h2>
                 <Button onClick={logoutHandler} href="#">로그아웃</Button>
+                </Space>
             </div>
+        </div>
     )
 }
 

@@ -19,7 +19,7 @@
   padding: 19px 20px;
 }
 
-.menu__container .menu_right {
+.menu_right {
   float: right;
   display: inline-block;
   font-size: 20px;

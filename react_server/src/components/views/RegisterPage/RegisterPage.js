@@ -84,9 +84,9 @@ function RegisterPage(props) {
             {errors.password_confirm && errors.password_confirm.type === "validate" &&<p>The password do not match</p>}
             <div>
             
-              <Checkbox>I agree to Servey Program’s Terms of Service</Checkbox><a style={{float:"right"}}href="#">❔Terms of Service</a>
+              <Checkbox>I agree to the Program’s Terms of Service</Checkbox><a style={{float:"right"}}href="#">❔Terms of Service</a>
             
-              <Checkbox>I accept Servey Program’s use of my data for the service</Checkbox><a style={{float:"right"}} href="#">❔Privacy Policy</a>
+              <Checkbox>I accept the Program’s use of my data for the service</Checkbox><a style={{float:"right"}} href="#">❔Privacy Policy</a>
             
             </div>
             <input type="submit" value="Register"/>
